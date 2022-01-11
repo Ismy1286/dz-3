@@ -1,8 +1,19 @@
-//
-//  NameCell.swift
-//  DZ-4.5.3
-//
-//  Created by user on 10.01.2022.
-//
-
 import Foundation
+import UIKit
+import SnapKit
+
+class NameCell: UITableViewCell {
+    
+    lazy var titleName: UILabel = {
+        let view = UILabel()
+        return view
+    }()
+    
+    override func layoutSubviews() {
+        
+        addSubview(titleName)
+        titleName.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+    }
+}
